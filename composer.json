@@ -1,0 +1,33 @@
+{
+    "name": "mei-labs/fi-tinymce",
+    "description": "Filament TinyMCE Plugin",
+    "require": {
+        "filament/filament": "^3.0-stable",
+        "unisharp/laravel-filemanager": "^2.7",
+        "intervention/image": "^2.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "MeiLABS\\TinyMCE\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MeiLABS\\TinyMCE\\TinymceServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Mei LABS",
+            "email": "dev@mei-labs.com"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
