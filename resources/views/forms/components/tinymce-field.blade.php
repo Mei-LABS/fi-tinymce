@@ -57,19 +57,6 @@
                     relative_urls: {{ $getRelativeUrls() ? 'true' : 'false' }},
                     remove_script_host: {{ $getRemoveScriptHost() ? 'true' : 'false' }},
                     convert_urls: {{ $getConvertUrls() ? 'true' : 'false' }},
-                    images_upload_handler: (blobInfo, success, failure, progress) => {
-                        if (!blobInfo.blob()) return
-
-                        $wire.upload(`componentFileAttachments.{{ $getStatePath() }}`, blobInfo.blob(), () => {
-                            $wire.getFormComponentFileAttachmentUrl('{{ $getStatePath() }}').then((url) => {
-                                if (!url) {
-                                    failure('{{ __('Error uploading file') }}')
-                                    return
-                                }
-                                success(url)
-                            })
-                        })
-                    },
                     automatic_uploads: true,
                     skin: (document.querySelector('html').getAttribute('class').includes('dark') ? 'oxide-dark' : 'oxide'),
 			        content_css: (document.querySelector('html').getAttribute('class').includes('dark') ? 'dark' : 'default'),
