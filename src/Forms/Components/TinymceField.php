@@ -26,6 +26,8 @@ class TinymceField extends Field implements Contracts\CanBeLengthConstrained, Co
 
     protected bool $toolbarSticky = false;
 
+    protected array $image_class_list = [];
+
     // TinyMCE var: relative_urls
     protected bool $relativeUrls = false;
 
@@ -252,6 +254,15 @@ class TinymceField extends Field implements Contracts\CanBeLengthConstrained, Co
         $this->convertUrls = $convertUrls;
 
         return $this;
+    }
+
+    public function getImageClassList(): array
+    {
+        if (config('mei-labs-tinymce.image_class_list')) {
+            return config('mei-labs-tinymce.image_class_list');
+        }
+
+        return $this->image_class_list;
     }
 
     public function getFileManagerPath()

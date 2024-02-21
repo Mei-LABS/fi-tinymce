@@ -80,7 +80,8 @@
                             callback(message.content);
                           }
                         });
-                    }
+                    },
+                    image_class_list: {{ json_encode($getImageClassList()) }},
                 }).render();
             });
             if (!window.tinyMceInitialized) {

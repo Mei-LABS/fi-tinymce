@@ -13,5 +13,8 @@ return [
             'upload_directory' => null,
         ]
     ],
+    'image_class_list' => [
+        ['title' => 'None', 'value' => ''],
+    ],
     'file_manager' => 'file-manager'
 ];
