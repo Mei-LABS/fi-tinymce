@@ -59,7 +59,12 @@
                     convert_urls: {{ $getConvertUrls() ? 'true' : 'false' }},
                     automatic_uploads: true,
                     skin: (document.querySelector('html').getAttribute('class').includes('dark') ? 'oxide-dark' : 'oxide'),
-			        content_css: (document.querySelector('html').getAttribute('class').includes('dark') ? 'dark' : 'default'),
+			        content_css: [
+                        (document.querySelector('html').getAttribute('class').includes('dark') ? 'dark' : 'default'),
+                        @foreach ($getContentCss() as $css)
+                            '{{ $css }}',
+                        @endforeach 
+                    ],
                     file_picker_callback : function(callback, value, meta) {
                         var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
                         var y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;

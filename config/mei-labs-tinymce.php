@@ -13,6 +13,9 @@ return [
             'upload_directory' => null,
         ]
     ],
+    'content_css' => [
+        //
+    ],
     'image_class_list' => [
         ['title' => 'None', 'value' => ''],
     ],

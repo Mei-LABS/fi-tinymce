@@ -28,6 +28,8 @@ class TinymceField extends Field implements Contracts\CanBeLengthConstrained, Co
 
     protected array $image_class_list = [];
 
+    protected array $content_css = [];
+
     // TinyMCE var: relative_urls
     protected bool $relativeUrls = false;
 
@@ -254,6 +256,15 @@ class TinymceField extends Field implements Contracts\CanBeLengthConstrained, Co
         $this->convertUrls = $convertUrls;
 
         return $this;
+    }
+
+    public function getContentCss(): array
+    {
+        if (config('mei-labs-tinymce.content_css')) {
+            return config('mei-labs-tinymce.content_css');
+        }
+
+        return $this->content_css;
     }
 
     public function getImageClassList(): array
