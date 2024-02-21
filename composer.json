@@ -3,7 +3,6 @@
     "description": "Filament TinyMCE Plugin",
     "require": {
         "filament/filament": "^3.0-stable",
-        "unisharp/laravel-filemanager": "^2.7",
         "intervention/image": "^2.0"
     },
     "license": "MIT",
