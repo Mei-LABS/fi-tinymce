@@ -280,4 +280,13 @@ class TinymceField extends Field implements Contracts\CanBeLengthConstrained, Co
     {
         return config('mei-labs-tinymce.file_manager');
     }
+
+    public function getCustomConfigs()
+    {
+        if (config('mei-labs-tinymce.custom_configs')) {
+            return '...'.json_encode(config('mei-labs-tinymce.custom_configs'));
+        }
+
+        return '';
+    }
 }
