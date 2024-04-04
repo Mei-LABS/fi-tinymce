@@ -19,5 +19,8 @@ return [
     'image_class_list' => [
         ['title' => 'None', 'value' => ''],
     ],
+    'custom_config' => [
+        //
+    ],
     'file_manager' => 'file-manager'
 ];

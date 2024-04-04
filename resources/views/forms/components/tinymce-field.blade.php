@@ -87,6 +87,7 @@
                         });
                     },
                     image_class_list: {{ json_encode($getImageClassList()) }},
+                    {{ json_encode($getCustomConfig()) }}
                 }).render();
             });
             if (!window.tinyMceInitialized) {
