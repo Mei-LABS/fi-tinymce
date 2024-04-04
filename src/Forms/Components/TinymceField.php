@@ -284,7 +284,7 @@ class TinymceField extends Field implements Contracts\CanBeLengthConstrained, Co
     public function getCustomConfigs()
     {
         if (config('mei-labs-tinymce.custom_configs')) {
-            return '...'.json_encode(config('mei-labs-tinymce.custom_config'));
+            return '...'.json_encode(config('mei-labs-tinymce.custom_configs'));
         }
 
         return '';
