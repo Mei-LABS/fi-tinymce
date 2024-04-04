@@ -19,7 +19,7 @@ return [
     'image_class_list' => [
         ['title' => 'None', 'value' => ''],
     ],
-    'custom_config' => [
+    'custom_configs' => [
         //
     ],
     'file_manager' => 'file-manager'

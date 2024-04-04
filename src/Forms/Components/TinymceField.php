@@ -39,8 +39,6 @@ class TinymceField extends Field implements Contracts\CanBeLengthConstrained, Co
     // TinyMCE var: convert_urls
     protected bool $convertUrls = true;
 
-    protected array $custom_config = [];
-
     protected function setUp(): void
     {
         parent::setUp();
@@ -283,8 +281,12 @@ class TinymceField extends Field implements Contracts\CanBeLengthConstrained, Co
         return config('mei-labs-tinymce.file_manager');
     }
 
-    public function getCustomConfig()
+    public function getCustomConfigs()
     {
-        return config('mei-labs-tinymce.custom_config');
+        if (config('mei-labs-tinymce.custom_configs')) {
+            return '...'.json_encode(config('mei-labs-tinymce.custom_config'));
+        }
+
+        return '';
     }
 }
